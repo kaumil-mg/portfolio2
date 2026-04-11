@@ -13,19 +13,30 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, simulated: true }, { status: 200 });
     }
 
-    // Google Apps Script usually prefers redirect following
+    // Google Apps Script requires specific headers and redirect following for server-side fetches
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       body: JSON.stringify({ name, email, brief }),
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
+      redirect: "follow",
     });
 
     if (response.ok) {
-      return NextResponse.json({ success: true }, { status: 200 });
+      const data = await response.json();
+      
+      if (data.result === "success") {
+        return NextResponse.json({ success: true }, { status: 200 });
+      } else {
+        console.error("Google Script Internal Error:", data.error);
+        return NextResponse.json({ error: 'Google Script Failed internally', details: data.error }, { status: 400 });
+      }
     } else {
-      return NextResponse.json({ error: 'Failed to submit to Google Sheets' }, { status: response.status });
+      const errorText = await response.text();
+      console.error("Google Script HTTP Error Details:", errorText);
+      return NextResponse.json({ error: 'Failed to submit to Google Sheets', details: errorText }, { status: response.status });
     }
   } catch (err) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

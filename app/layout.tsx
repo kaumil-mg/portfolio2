@@ -13,8 +13,11 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "ARCHITECT.OS | Portfolio",
-  description: "Freelance Data Science & Web Development Portfolio",
+  title: "Kaumil",
+  description: "Data Scientist Portfolio",
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">👍</text></svg>',
+  },
 };
 
 export default function RootLayout({

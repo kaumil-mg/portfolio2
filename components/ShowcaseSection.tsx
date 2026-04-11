@@ -24,13 +24,16 @@ const projects = [
   },
   {
     title: "Data Visualization Engine",
-    description: "In-depth analytics pipeline using Power BI connecting live SQL databases, JSON payloads, and extracting core insights utilizing Pandas, Plotly, and Matplotlib visualizations.",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjKXebinYeKTryZh0Hl6QE9hVPH7NJeCaA3dXB2AeUX1TfhOMC9hF-4icAmifUcPumI6ADQdfIbXhsPHLbnCXQuMJ_xexviC-LuvK1KmXDocnz0F3uoGvz4HP84VuJjpx_SMVY5OZhWeUEBzZ5MM9lVlKIVgGEkQpQQyR96VRFQD-VomNwD32-JLTlvqlH1cVuz2jwCawmarB7oUvLsdQD4H08y25f6i1iXxW-nRcAAoeQhwUBUXx8_c62jrjPs84yX_Et0k0IuY9l",
+    description: "Comprehensive BI solution processing 1M+ rows of finance data to deliver real-time operational insights via Tableau and Power BI.",
+    imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     tags: [
       { name: "Power BI", colorClass: "text-primary border-primary/20", bgClass: "bg-surface-container-high" },
-      { name: "Data Engineering", colorClass: "text-secondary border-secondary/20", bgClass: "bg-surface-container-high" }
+      { name: "Tableau", colorClass: "text-secondary border-secondary/20", bgClass: "bg-surface-container-high" },
+      { name: "SQL", colorClass: "text-tertiary border-tertiary/20", bgClass: "bg-surface-container-high" },
+      { name: "ETL", colorClass: "text-primary border-primary/20", bgClass: "bg-surface-container-high" }
     ],
-    hoverShadow: "hover:shadow-[0_10px_40px_rgba(172,137,255,0.1)]"
+    hoverShadow: "hover:shadow-[0_10px_40px_rgba(172,137,255,0.1)]",
+    link: "https://linktr.ee/Kaumilmg"
   }
 ];
 
@@ -68,16 +71,21 @@ export default function ShowcaseSection() {
                 <p className="text-on-surface-variant text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
                       className={`text-[10px] px-2 py-1 rounded text-primary border ${tag.colorClass} ${tag.bgClass}`}
                     >
-                      {tag.name}
+                      {tag.name || tag}
                     </span>
                   ))}
                 </div>
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
+                    Live Showcase
+                  </a>
+                )}
               </div>
             </div>
           ))}

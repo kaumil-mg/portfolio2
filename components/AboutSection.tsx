@@ -62,12 +62,35 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                 <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-tertiary mb-2">Certifications</h4>
-                 <div className="space-y-2">
-                  <p className="text-sm text-on-surface font-semibold">Data Science Master</p>
-                  <p className="text-xs text-on-surface-variant">Physics Wallah</p>
-                  <p className="text-sm text-on-surface font-semibold mt-2">Data Science Web App Python</p>
-                  <p className="text-xs text-on-surface-variant">Coursera</p>
+                 <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-tertiary mb-3">Certifications</h4>
+                 <div className="space-y-3">
+                  <div>
+                    <a href="https://pwskills.com/learn/certificate/d334f700-6492-43ae-8a61-7c255e8fb3d4/" target="_blank" rel="noopener noreferrer" className="block group">
+                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
+                        Data Science Master
+                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                      </p>
+                      <p className="text-xs text-on-surface-variant">Physics Wallah</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://www.coursera.org/account/accomplishments/certificate/PAS6RXGC4FDD" target="_blank" rel="noopener noreferrer" className="block group">
+                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
+                        Build a Data Science Web App with Streamlit and Python
+                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                      </p>
+                      <p className="text-xs text-on-surface-variant">Coursera</p>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://lnkd.in/dZue93N4" target="_blank" rel="noopener noreferrer" className="block group">
+                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
+                        Data Analytics Part 2: Extending and Applying Core Knowledge
+                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                      </p>
+                      <p className="text-xs text-on-surface-variant">LinkedIn</p>
+                    </a>
+                  </div>
                 </div>
               </div>
           </div>
