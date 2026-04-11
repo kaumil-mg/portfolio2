@@ -72,14 +72,19 @@ export default function ShowcaseSection() {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIdx) => (
+                  {project.tags.map((tag, tagIdx) => {
+                    const tagObj = typeof tag === 'object' ? tag : null;
+                    const tagString = typeof tag === 'string' ? tag : null;
+                    
+                    return (
                     <span
                       key={tagIdx}
-                      className={`text-[10px] px-2 py-1 rounded text-primary border ${tag.colorClass} ${tag.bgClass}`}
+                      className={tagObj ? `text-[10px] uppercase font-label tracking-widest px-3 py-1 rounded-full border ${tagObj.colorClass} ${tagObj.bgClass}` : "px-3 py-1 text-[10px] font-label uppercase tracking-widest bg-surface-container-high text-on-surface border border-outline-variant/50 rounded-full"}
                     >
-                      {tag.name || tag}
+                      {tagString || tagObj?.name}
                     </span>
-                  ))}
+                    );
+                  })}
                 </div>
                 {project.link && (
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-headline font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors">
