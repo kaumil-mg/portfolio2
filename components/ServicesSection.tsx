@@ -45,45 +45,18 @@ export default function ServicesSection() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => {
-            const ringColorHover = 
-              service.colorClass === "primary" ? "hover:border-primary/20 hover:shadow-[0_0_30px_rgba(0,241,253,0.15)]" :
-              service.colorClass === "secondary" ? "hover:border-secondary/20 hover:shadow-[0_0_30px_rgba(68,163,245,0.15)]" :
-              service.colorClass === "tertiary" ? "hover:border-tertiary/20 hover:shadow-[0_0_30px_rgba(172,137,255,0.15)]" :
-              "hover:border-primary-fixed/20 hover:shadow-[0_0_30px_rgba(0,241,253,0.15)]";
-
-            const iconBgText = 
-              service.colorClass === "primary" ? "bg-primary/10 text-primary" :
-              service.colorClass === "secondary" ? "bg-secondary/10 text-secondary" :
-              service.colorClass === "tertiary" ? "bg-tertiary/10 text-tertiary" :
-              "bg-primary-fixed/10 text-primary-fixed";
-            
-            const lineBgHover = 
-              service.colorClass === "primary" ? "group-hover:bg-primary/30" :
-              service.colorClass === "secondary" ? "group-hover:bg-secondary/30" :
-              service.colorClass === "tertiary" ? "group-hover:bg-tertiary/30" :
-              "group-hover:bg-primary-fixed/30";
-
-            return (
-              <div
-                key={index}
-                className={`group p-8 rounded-xl bg-surface-container-highest/50 hover:bg-surface-container-highest transition-all duration-500 border border-transparent ${ringColorHover} hover:scale-[1.02]`}
-              >
-                <div
-                  className={`w-12 h-12 mb-8 flex items-center justify-center rounded-lg ${iconBgText} group-hover:scale-110 transition-transform`}
-                >
-                  <span className="material-symbols-outlined text-3xl">{service.icon}</span>
-                </div>
-                <h3 className="text-xl font-headline font-bold mb-4">{service.title}</h3>
-                <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <div
-                  className={`w-full h-px bg-outline-variant/30 ${lineBgHover} transition-colors`}
-                ></div>
-              </div>
-            );
-          })}
+          {services.map((service, index) => (
+            <div key={index} className="group p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,139,163,0.1)] dark:hover:shadow-[0_10px_40px_rgba(0,241,253,0.1)] hover:border-primary/50 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <span className="material-symbols-outlined text-4xl text-primary mb-6 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">{service.icon}</span>
+              <h3 className="text-xl font-headline font-bold text-on-surface mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p className="text-sm text-on-surface-variant font-body leading-relaxed group-hover:text-on-surface transition-colors duration-300">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </RevealSection>

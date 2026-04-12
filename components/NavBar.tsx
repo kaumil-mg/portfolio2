@@ -27,7 +27,7 @@ export default function NavBar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,242,254,0.05)] transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center px-8 h-16 w-full">
-        <div className="text-xl font-bold tracking-tighter text-secondary font-headline">
+        <div className="text-xl font-bold tracking-tighter text-secondary font-headline hover:tracking-wide transition-all duration-500 cursor-default">
           KAUMIL<span className="text-primary">.MG</span>
         </div>
         {/* Desktop Links */}
@@ -35,16 +35,16 @@ export default function NavBar() {
           <a className="text-primary border-b-2 border-primary pb-1" href="#home">
             Home
           </a>
-          <a className="text-on-surface/70 hover:text-on-surface transition-colors" href="#skills">
+          <a className="text-on-surface/70 hover:text-primary transition-all duration-300 hover:-translate-y-0.5" href="#skills">
             Skills
           </a>
-          <a className="text-on-surface/70 hover:text-on-surface transition-colors" href="#experience">
+          <a className="text-on-surface/70 hover:text-primary transition-all duration-300 hover:-translate-y-0.5" href="#experience">
             Experience
           </a>
-          <a className="text-on-surface/70 hover:text-on-surface transition-colors" href="#about">
+          <a className="text-on-surface/70 hover:text-primary transition-all duration-300 hover:-translate-y-0.5" href="#about">
             About
           </a>
-          <a className="text-on-surface/70 hover:text-on-surface transition-colors" href="#projects">
+          <a className="text-on-surface/70 hover:text-primary transition-all duration-300 hover:-translate-y-0.5" href="#projects">
             Projects
           </a>
         </div>

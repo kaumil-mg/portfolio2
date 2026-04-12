@@ -37,63 +37,70 @@ export default function AboutSection() {
           <p className="text-on-surface-variant text-base leading-relaxed">
             My experience spans constructing massive data pipelines, executing MLOps configurations across AWS, Azure, and GCP, and successfully deploying GenAI tools via tailored RAG workflows and robust vector databases. I have a track record of driving cross-functional teams to deliver enterprise data-driven solutions for banking risk optimization and product development.
           </p>
-          <div className="space-y-4 pt-4">
-            <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-primary-container">Technical Stack</h4>
+          <div>
+            <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-tertiary mb-4">Core Technology Stack</h4>
             <div className="flex flex-wrap gap-2">
-              {stackList.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-2 rounded-md bg-surface-variant text-primary text-xs font-label border border-primary/10"
-                >
+              {stackList.map((tech, i) => (
+                <span key={i} className="px-4 py-2 border border-outline-variant/30 rounded-full text-xs font-label text-on-surface-variant tracking-wide hover:border-tertiary/50 hover:bg-tertiary/5 hover:text-tertiary transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-default">
                   {tech}
                 </span>
               ))}
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-              <div>
-                <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-secondary mb-2">Education</h4>
-                <div className="space-y-2">
-                  <p className="text-sm text-on-surface font-semibold">M.Sc. Data Science</p>
-                  <p className="text-xs text-on-surface-variant">Symbiosis Skills & Prof. Univ. (2021-2023)</p>
-                  <p className="text-sm text-on-surface font-semibold mt-2">B.Sc. IT</p>
-                  <p className="text-xs text-on-surface-variant">Indus University (2018-2021)</p>
-                </div>
-              </div>
-              <div>
-                 <h4 className="font-headline text-xs uppercase tracking-[0.3em] text-tertiary mb-3">Certifications</h4>
-                 <div className="space-y-3">
-                  <div>
-                    <a href="https://pwskills.com/learn/certificate/d334f700-6492-43ae-8a61-7c255e8fb3d4/" target="_blank" rel="noopener noreferrer" className="block group">
-                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
-                        Data Science Master
-                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
-                      </p>
-                      <p className="text-xs text-on-surface-variant">Physics Wallah</p>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://www.coursera.org/account/accomplishments/certificate/PAS6RXGC4FDD" target="_blank" rel="noopener noreferrer" className="block group">
-                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
-                        Build a Data Science Web App with Streamlit and Python
-                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
-                      </p>
-                      <p className="text-xs text-on-surface-variant">Coursera</p>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://lnkd.in/dZue93N4" target="_blank" rel="noopener noreferrer" className="block group">
-                      <p className="text-sm text-on-surface font-semibold group-hover:text-primary transition-colors flex items-center gap-1">
-                        Data Analytics Part 2: Extending and Applying Core Knowledge
-                        <span className="material-symbols-outlined text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
-                      </p>
-                      <p className="text-xs text-on-surface-variant">LinkedIn</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
+      
+      {/* Education & Certifications - Elevated Prominence */}
+      <div className="container mx-auto mt-24">
+        <h3 className="text-3xl font-headline font-bold text-on-surface mb-8 tracking-tighter text-center md:text-left">Credentials & Proof of Work</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Education Card */}
+          <div className="p-8 rounded-2xl bg-surface-container-low border border-outline-variant/20 relative overflow-hidden">
+             <div className="w-12 h-12 mb-6 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center">
+                <span className="material-symbols-outlined text-3xl">school</span>
+             </div>
+             <h4 className="font-headline font-bold mb-2">M.Sc. Data Science</h4>
+             <p className="text-sm text-on-surface-variant mb-4">Symbiosis Skills & Prof. Univ. (2021-2023)</p>
+             <h4 className="font-headline font-bold mb-2">B.Sc. IT</h4>
+             <p className="text-sm text-on-surface-variant">Indus University (2018-2021)</p>
           </div>
+
+          {/* Certifications */}
+          <a href="https://pwskills.com/learn/certificate/d334f700-6492-43ae-8a61-7c255e8fb3d4/" target="_blank" rel="noopener noreferrer" className="group p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:border-primary/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,139,163,0.1)] transition-all duration-500 relative overflow-hidden flex flex-col justify-between cursor-pointer">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+             <div>
+               <div className="w-12 h-12 mb-6 rounded-lg bg-primary/10 text-primary flex items-center justify-center transform transition-transform duration-500 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-3xl">verified</span>
+               </div>
+               <h4 className="font-headline font-bold mb-2 group-hover:text-primary transition-colors">Data Science Master</h4>
+               <p className="text-sm text-on-surface-variant">Physics Wallah</p>
+             </div>
+             <span className="material-symbols-outlined absolute bottom-8 right-8 text-on-surface-variant opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500">arrow_outward</span>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/certificate/PAS6RXGC4FDD" target="_blank" rel="noopener noreferrer" className="group p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:border-secondary/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(68,163,245,0.1)] transition-all duration-500 relative overflow-hidden flex flex-col justify-between cursor-pointer">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-secondary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+             <div>
+               <div className="w-12 h-12 mb-6 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center transform transition-transform duration-500 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-3xl">verified</span>
+               </div>
+               <h4 className="font-headline font-bold mb-2 group-hover:text-secondary transition-colors">Build a Data Science Web App with Streamlit</h4>
+               <p className="text-sm text-on-surface-variant">Coursera</p>
+             </div>
+             <span className="material-symbols-outlined absolute bottom-8 right-8 text-on-surface-variant opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500">arrow_outward</span>
+          </a>
+
+          <a href="https://lnkd.in/dZue93N4" target="_blank" rel="noopener noreferrer" className="group p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:border-tertiary/50 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(172,137,255,0.1)] transition-all duration-500 relative overflow-hidden flex flex-col justify-between cursor-pointer lg:col-start-2">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-tertiary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+             <div>
+               <div className="w-12 h-12 mb-6 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center transform transition-transform duration-500 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-3xl">verified</span>
+               </div>
+               <h4 className="font-headline font-bold mb-2 group-hover:text-tertiary transition-colors">Data Analytics Part 2: Extending Core Knowledge</h4>
+               <p className="text-sm text-on-surface-variant">LinkedIn</p>
+             </div>
+             <span className="material-symbols-outlined absolute bottom-8 right-8 text-on-surface-variant opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500">arrow_outward</span>
+          </a>
         </div>
       </div>
     </RevealSection>

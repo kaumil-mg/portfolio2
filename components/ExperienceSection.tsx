@@ -56,32 +56,33 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid gap-8">
-          {experiences.map((exp, idx) => (
-            <div 
-              key={idx} 
-              className="group p-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/20 hover:bg-surface-container transition-all duration-500 relative"
-            >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary-container to-secondary rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
-              <div className="flex flex-col md:flex-row justify-between mb-4 gap-4">
-                <div>
-                  <h3 className="text-2xl font-headline font-bold text-on-surface">{exp.role}</h3>
-                  <div className="text-lg text-primary">{exp.company}</div>
-                </div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant md:text-right">
-                  {exp.period}
+        <div className="space-y-12 relative">
+          {experiences.map((exp, index) => (
+            <div key={index} className="group relative pl-12 md:pl-0">
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 group-hover:bg-primary/50 transition-colors duration-500 -translate-x-1/2"></div>
+              <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:ml-auto"}`}>
+                <div className="absolute left-0 md:left-1/2 top-2 w-4 h-4 rounded-full bg-primary ring-4 ring-surface-container-high md:-translate-x-1/2 z-10 transition-transform duration-500 group-hover:scale-150 group-hover:shadow-[0_0_15px_rgba(0,241,253,0.5)]"></div>
+                <div className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:border-primary/40 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(0,139,163,0.08)] dark:hover:shadow-[0_8px_30px_rgba(0,241,253,0.08)] relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-x-[-100%] group-hover:translate-x-[100%]"></div>
+                  <span className="inline-block px-3 py-1 bg-surface-container-highest text-xs font-label uppercase tracking-widest text-primary rounded-full mb-4">
+                    {exp.period}
+                  </span>
+                  <h3 className="text-2xl font-headline font-bold text-on-surface mb-1 group-hover:text-primary transition-colors duration-300">
+                    {exp.role}
+                  </h3>
+                  <h4 className="text-lg text-secondary font-headline mb-4">
+                    {exp.company}
+                  </h4>
+                  <ul className="space-y-3 mt-6 text-left">
+                    {exp.points.map((pt, i) => (
+                      <li key={i} className="text-on-surface-variant text-sm leading-relaxed flex gap-3">
+                        <span className="text-secondary mt-1 material-symbols-outlined text-sm">arrow_forward_ios</span>
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              
-              <ul className="space-y-3 mt-6">
-                {exp.points.map((pt, i) => (
-                  <li key={i} className="text-on-surface-variant text-sm leading-relaxed flex gap-3">
-                    <span className="text-secondary mt-1 material-symbols-outlined text-sm">arrow_forward_ios</span>
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

@@ -86,7 +86,7 @@ export default function ContactSection() {
           </div>
           <div className="flex flex-col items-center pt-8 gap-4">
             <button
-              className="group relative px-12 py-4 bg-gradient-to-r from-primary-container to-secondary text-on-primary-container rounded-full font-headline font-bold text-lg overflow-hidden transition-all duration-300 active:scale-95 shadow-lg disabled:opacity-50"
+              className="group relative px-12 py-4 bg-gradient-to-r from-primary-container to-secondary text-on-primary-container rounded-full font-headline font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,139,163,0.3)] dark:hover:shadow-[0_0_30px_rgba(0,241,253,0.3)] hover:-translate-y-1 active:scale-95 shadow-lg disabled:opacity-50"
               type="submit"
               disabled={status === "loading"}
             >
