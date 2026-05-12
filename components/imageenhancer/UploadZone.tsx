@@ -45,9 +45,11 @@ export default function UploadZone() {
     formData.append("file", file);
 
     try {
-      // Connect to the local FastAPI AI service
+      // Connect to the AI service (cloud or local)
       setStatus("enhancing");
-      const response = await fetch("http://127.0.0.1:8000/api/v1/enhance", {
+      
+      const apiUrl = process.env.NEXT_PUBLIC_AI_API_URL || "http://127.0.0.1:8000";
+      const response = await fetch(`${apiUrl}/api/v1/enhance`, {
         method: "POST",
         body: formData,
       });
