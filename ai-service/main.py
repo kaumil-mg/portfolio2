@@ -38,7 +38,7 @@ async def enhance_endpoint(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         print(f"Server Error: {e}")
-        raise HTTPException(status_code=500, detail="Internal Server Error during enhancement.")
+        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 if __name__ == "__main__":
     print("Starting local AI service on http://127.0.0.1:8000")

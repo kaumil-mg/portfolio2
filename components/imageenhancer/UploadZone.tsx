@@ -56,7 +56,8 @@ export default function UploadZone() {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to enhance image");
+        const errData = await response.json().catch(() => null);
+        throw new Error(errData?.detail || "Failed to enhance image");
       }
 
       const blob = await response.blob();
