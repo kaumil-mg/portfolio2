@@ -48,7 +48,8 @@ export default function UploadZone() {
       // Connect to the AI service (cloud or local)
       setStatus("enhancing");
       
-      const apiUrl = process.env.NEXT_PUBLIC_AI_API_URL || "http://127.0.0.1:8000";
+      const rawUrl = process.env.NEXT_PUBLIC_AI_API_URL || "http://127.0.0.1:8000";
+      const apiUrl = rawUrl.endsWith("/") ? rawUrl.slice(0, -1) : rawUrl;
       const response = await fetch(`${apiUrl}/api/v1/enhance`, {
         method: "POST",
         body: formData,
