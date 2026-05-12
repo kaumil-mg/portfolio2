@@ -96,22 +96,26 @@ export default function UploadZone() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            {...getRootProps()}
-            className={`
-              w-full h-64 border-2 border-dashed rounded-3xl flex flex-col items-center justify-center p-8 transition-colors duration-300 cursor-pointer
-              ${isDragActive ? "border-primary bg-primary/5" : "border-[#D7E2EA]/20 bg-[#0C0C0C] hover:border-primary/50 hover:bg-[#1A1A1A]"}
-            `}
+            className="w-full"
           >
-            <input {...getInputProps()} />
-            <UploadCloud className={`w-12 h-12 mb-4 transition-colors duration-300 ${isDragActive ? "text-primary" : "text-[#D7E2EA]/40"}`} />
-            <p className="text-lg font-medium text-[#D7E2EA] mb-2 text-center">
-              Drag & Drop your image here
-            </p>
-            <p className="text-sm text-[#D7E2EA]/50 text-center mb-6">
-              Supports JPG, PNG, WEBP up to 10MB
-            </p>
-            <div className="px-6 py-2 rounded-full bg-[#1A1A1A] border border-[#D7E2EA]/10 text-sm text-[#D7E2EA] hover:bg-[#2A2A2A] transition-colors">
-              Browse Files
+            <div
+              {...getRootProps()}
+              className={`
+                w-full h-64 border-2 border-dashed rounded-3xl flex flex-col items-center justify-center p-8 transition-colors duration-300 cursor-pointer
+                ${isDragActive ? "border-primary bg-primary/5" : "border-[#D7E2EA]/20 bg-[#0C0C0C] hover:border-primary/50 hover:bg-[#1A1A1A]"}
+              `}
+            >
+              <input {...getInputProps()} />
+              <UploadCloud className={`w-12 h-12 mb-4 transition-colors duration-300 ${isDragActive ? "text-primary" : "text-[#D7E2EA]/40"}`} />
+              <p className="text-lg font-medium text-[#D7E2EA] mb-2 text-center">
+                Drag & Drop your image here
+              </p>
+              <p className="text-sm text-[#D7E2EA]/50 text-center mb-6">
+                Supports JPG, PNG, WEBP up to 10MB
+              </p>
+              <div className="px-6 py-2 rounded-full bg-[#1A1A1A] border border-[#D7E2EA]/10 text-sm text-[#D7E2EA] hover:bg-[#2A2A2A] transition-colors">
+                Browse Files
+              </div>
             </div>
           </motion.div>
         ) : (
