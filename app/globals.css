@@ -216,3 +216,15 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+html, body {
+  background-color: #0C0C0C !important;
+  color: #D7E2EA;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

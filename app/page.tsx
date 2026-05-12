@@ -1,25 +1,19 @@
-import NavBar from "@/components/NavBar";
-import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import AboutSection from "@/components/AboutSection";
-import ShowcaseSection from "@/components/ShowcaseSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import HeroSection from "@/components/sections/HeroSection";
+import MarqueeSection from "@/components/sections/MarqueeSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <>
-      <NavBar />
-      <main className="flex-1">
-        <HeroSection />
-        <ServicesSection />
-        <ExperienceSection />
-        <AboutSection />
-        <ShowcaseSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <main className="flex-1 overflow-x-clip bg-[#0C0C0C]">
+      <HeroSection />
+      <MarqueeSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <ContactSection />
+    </main>
   );
 }

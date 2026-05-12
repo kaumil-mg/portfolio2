@@ -1,0 +1,5 @@
+realesrgan_ncnn/
+weights/
+__pycache__/
+*.pyc
+.env

@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Manrope } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 
-import CustomCursor from "@/components/CustomCursor";
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-headline",
+const kanit = Kanit({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ["latin"],
-});
-
-const manrope = Manrope({
-  variable: "--font-body",
-  subsets: ["latin"],
+  variable: "--font-kanit",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${manrope.variable} dark h-full antialiased`}
+      className={`${kanit.variable} ${kanit.className} dark h-full antialiased`}
     >
       <head>
         <link
@@ -38,8 +32,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-full flex flex-col md:cursor-none">
-        <CustomCursor />
+      <body className="bg-[#0C0C0C] text-[#D7E2EA] min-h-full flex flex-col">
         {children}
       </body>
     </html>
