@@ -66,7 +66,15 @@ export default function UploadZone() {
     } catch (err: any) {
       console.error(err);
       setStatus("error");
-      setErrorMsg(err.message || "An error occurred during enhancement");
+      
+      // If it's a network error (like CORS or Localhost on production), fetch throws a TypeError
+      if (err.name === 'TypeError' || err.message === 'Failed to fetch') {
+        const rawUrl = process.env.NEXT_PUBLIC_AI_API_URL || "http://127.0.0.1:8000";
+        const apiUrl = rawUrl.endsWith("/") ? rawUrl.slice(0, -1) : rawUrl;
+        setErrorMsg(`Network Error: Failed to reach ${apiUrl}. Please check your Vercel Environment Variables and Hugging Face deployment.`);
+      } else {
+        setErrorMsg(err.message || "An error occurred during enhancement");
+      }
     }
   };
 
