@@ -166,7 +166,6 @@ export default function UploadZone() {
               {status === "idle" || status === "error" ? (
                 <button
                   onClick={handleEnhance}
-                  disabled={status === "uploading" || status === "enhancing"}
                   className="w-full sm:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary-container font-medium uppercase tracking-widest text-sm shadow-[0_0_20px_rgba(118,33,176,0.3)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
                 >
                   <Sparkles className="w-4 h-4" />
