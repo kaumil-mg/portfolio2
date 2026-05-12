@@ -25,8 +25,9 @@ RUN wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/reale
 # Copy application files
 COPY . .
 
-# Expose the port
-EXPOSE 8000
+# Expose the port (Hugging Face Spaces uses 7860 by default)
+EXPOSE 7860
 
 # Run the FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# We use shell form to allow environment variable expansion if provided by the host (like Render)
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-7860}
