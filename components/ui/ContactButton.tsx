@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 interface ContactButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   label?: string;
+  href?: string;
 }
 
 export default function ContactButton({ className, label = "Contact Me", href, ...props }: ContactButtonProps) {
